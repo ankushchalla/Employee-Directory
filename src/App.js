@@ -13,11 +13,11 @@ function App() {
                         firstName: result.name.first,
                         lastName: result.name.last,
                         email: result.email,
-                        state: result.location.state
+                        state: result.location.state,
+                        id: result.login.uuid
                     }
                     return employeeInfo;
                 }));
-                console.log("state:", directoryState);
             })
     }, [])
 
@@ -34,7 +34,13 @@ function App() {
                     </tr>
                 </thead>
                 <tbody>
-                    <EmployeeRow></EmployeeRow>
+                    {directoryState.map(employee => <EmployeeRow
+                        firstName={employee.firstName}
+                        lastName={employee.lastName}
+                        email={employee.email}
+                        state={employee.state}
+                        key={employee.id} />
+                    )}
                 </tbody>
             </table>
         </div>

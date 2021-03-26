@@ -1,13 +1,13 @@
 import React from "react";
 
-function EmployeeRow(props) {
+function EmployeeRow({firstName, lastName, email, state}) {
     return (
         <>
             <tr>
-                <td className="first-name">Mark</td>
-                <td className="last-name">Otto</td>
-                <td className="email">ankushchalla@gmail.com</td>
-                <td className="state">CA</td>
+                <td className="first-name" key="1">{firstName}</td>
+                <td className="last-name" key="2">{lastName}</td>
+                <td className="email" key="3">{email}</td>
+                <td className="state" key="4">{state}</td>
             </tr>
         </>
     );
